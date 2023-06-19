@@ -11,9 +11,6 @@
             @if (auth()->user()->role === 'admin')
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" style="color: #97a3bf" href="{{ route('welcome') }}">Store</a>
-                    </li>
-                    <li class="nav-item active">
                         <a class="nav-link" style="color: #97a3bf" href="{{ route('loginform') }}">Login</a>
                     </li>
                     <li class="nav-item">
