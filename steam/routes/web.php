@@ -32,6 +32,10 @@ Route::get('show-add-game', [AdminController::class, 'showAddGame'])->name('show
 Route::get('dashboard', [AdminController::class, 'dash'])->name('index-game');
 
 Route::get('game/{id}', [GameController::class, 'showGame'])->name('game.show');
+Route::get('game/{id}/edit', [GameController::class, 'edit'])->name('game.edit');
+Route::put('game/{id}', [GameController::class, 'update'])->name('game.update');
+Route::delete('game/{id}', [GameController::class, 'destroy'])->name('game.destroy');
+
 
 Route::get('buy/{game_id}', [TransaksiController::class, 'buy'])->name('buy');
 Route::post('buy/{game_id}', [TransaksiController::class, 'processBuy'])->name('processBuy');

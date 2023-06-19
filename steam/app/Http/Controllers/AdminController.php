@@ -75,14 +75,14 @@ class AdminController extends Controller
     public function index()
     {
         $user = Auth::user();
-    
-        if ($user->role === 'user') {
-            $games = game::all();
-            
-            return view('welcome', compact('games'));
+        
+        if ($user && $user->role === 'admin') {
+            return view('welcome');
         }
         
-        return view('welcome');
+        $games = Game::all();
+        return view('welcome', compact('games'));
     }
+
 
 }
